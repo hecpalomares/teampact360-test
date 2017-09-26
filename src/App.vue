@@ -6,17 +6,20 @@
     <div class="panel-heading">
       <h3 class="panel-title">Question List</h3>
       <div class="panel-body">
-        <table class="table table-striped" v-for="question in questions">
+        <table class="table table-striped table-responsive" v-for="question in questions" :key="question['.key']">
             <thead>
               <tr>
                 <th>{{question['.key']}}</th>
-                <tr v-for="cluster in question">
-                  {{cluster}}
-                <tr>
               </tr>
             </thead>
             <tbody>
-              <tr >
+              <tr v-for="(cluster, key, index) in filterLastElement(question)" :key="cluster.key">
+                <td>
+                  {{index + 1}}
+                </td>
+                <td>
+                  {{cluster}}
+                </td>
               </tr>
             </tbody>
         </table>
@@ -44,6 +47,12 @@
       name: 'app',
       firebase: {
         questions: questionsRef
+      },
+      methods: {
+        filterLastElement: function (questionsArray) {
+          delete questionsArray['.key']
+          return questionsArray
+        }
       }
     }
   </script>
