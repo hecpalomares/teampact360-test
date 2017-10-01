@@ -14,17 +14,29 @@
             <tr>
               <th colspan="4">{{competencia.desc}}</th>
             </tr>
+            <tr>
+              <th>
+              </th>
+              <th>
+              </th>
+              <th>
+                Aplicación
+              </th>
+              <th>
+                Expertise
+              </th>
+            </tr>
           </thead>
           <tbody>
             <tr v-for="(cluster, key, index) in filterByCluster(competencia)">
               <td>
-                {{ index + 1}}
+                {{ key }}
               </td>
               <td style="width: 85%;">
                 {{ cluster }}
               </td>
               <td>
-                <select class="form-control">
+                <select class="form-control" v-bind:class="'a'+'_'+formIdByCluster(competencia)+'_'+key">
                   <option value=" "></option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -35,7 +47,7 @@
                 </select>
               </td>
               <td>
-                <select class="form-control">
+                <select class="form-control" v-bind:class="'e'+'_'+formIdByCluster(competencia)+'_'+key">
                   <option value=" "></option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -76,13 +88,19 @@
     },
     methods: {
       filterByCluster: function (questionsArray) {
-        delete questionsArray.name
-        delete questionsArray.desc
-        return questionsArray
+        let clusterArray = Object.keys(questionsArray).map(function (key, index) {
+          if (key !== ('name' || 'desc')) {
+            return questionsArray[key]
+          }
+        })
+        return clusterArray.filter(e => e)
       },
       filterByCompetencia: function (competenciaArray) {
         delete competenciaArray['.key']
         return competenciaArray
+      },
+      formIdByCluster: function (questionsArray) {
+        return questionsArray.name.replace(/ /g, '-').toLowerCase()
       }
     }
   }
