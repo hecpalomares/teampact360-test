@@ -3,31 +3,28 @@
     <div class="page-header">
       <h1>Teampact360 Assessment</h1>
     </div>
-    <div class="panel-heading">
-      <h3 class="panel-title">Preguntas</h3>
-      <div class="panel-body">
-        <table class="table table-striped table-responsive" v-for="question in questions" :key="question['.key']">
+    <div class="panel-heading" v-for="categoria in categorias">
+      <h3 class="panel-title">{{categoria['.key']}}</h3>
+      <div class="panel-body" v-for="competencia in filterByCompetencia(categoria)">
+        <table class="table table-striped table-responsive">
           <thead>
             <tr>
-              <th colspan="4">{{question['.key']}}</th>
+              <th colspan="4">{{competencia.name}}</th>
             </tr>
             <tr>
-              <th></th>
-              <th>Cluster</th>
-              <th>Aplicación</th>
-              <th>Teoria</th>
+              <th colspan="4">{{competencia.desc}}</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(cluster, key, index) in filterLastElement(question)" :key="cluster.key">
+            <tr v-for="(cluster, key, index) in filterByCluster(competencia)">
               <td>
-                {{index + 1}}
+                {{ index + 1}}
               </td>
               <td style="width: 85%;">
-                {{cluster}}
+                {{ cluster }}
               </td>
               <td>
-                <select>
+                <select class="form-control">
                   <option value=" "></option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -38,7 +35,7 @@
                 </select>
               </td>
               <td>
-                <select>
+                <select class="form-control">
                   <option value=" "></option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -51,9 +48,9 @@
             </tr>
           </tbody>
         </table>
-        <input id="saveForm" name="saveForm" type="submit" class="btn btn-primary btn-lg pull-right" value="Enviar Resultados">
       </div>
     </div>
+    <input id="sendForm" name="sendForm" type="submit" class="btn btn-primary btn-lg pull-right" value="Enviar Resultados">
   </div>
 </template>
 
@@ -70,17 +67,22 @@
 
   let app = Firebase.initializeApp(config)
   let db = app.database()
-  let questionsRef = db.ref('questions')
+  let categoriasRef = db.ref('categorias')
 
   export default {
     name: 'app',
     firebase: {
-      questions: questionsRef
+      categorias: categoriasRef
     },
     methods: {
-      filterLastElement: function (questionsArray) {
-        delete questionsArray['.key']
+      filterByCluster: function (questionsArray) {
+        delete questionsArray.name
+        delete questionsArray.desc
         return questionsArray
+      },
+      filterByCompetencia: function (competenciaArray) {
+        delete competenciaArray['.key']
+        return competenciaArray
       }
     }
   }

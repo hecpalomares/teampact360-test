@@ -1,0 +1,83 @@
+{
+  "categorias" : {
+    "Organización" : {
+      "ESTRUCTURA ORGANIZACIONAL": {
+        "1" : "Entiende el tipo de estructura (funcional, híbrida o proyectizada) para el diseño del modelo de gestión",
+        "2" : "Identifica las unidades y departamentos que proveen recursos al proyecto",
+        "3" : "Define roles y responsabilidades para establecer la interfaz entre el proyecto y las diferentes unidades de la organización",
+        "4" : "Acuerda los mecanismos para obtener los recursos dentro de la estructura organizacional",
+        "5" : "Determina los requerimientos de la oficina del proyecto y acuerda los límites de autoridad y posición dentro de la organización",
+        "name": "ESTRUCTURA ORGANIZACIONAL",
+        "desc": " Entender la estructura organizacional dentro del cual el proyecto esta incluido, para reconocer la jerarquía en la toma de decisiones y el nivel de información para las entidades dentro de la organización."
+      }
+    },
+    "Personal" : {
+      "TRABAJO EN EQUIPO": {
+        "1" : "Construye y mantiene un equipo efectivo en todo el ciclo de vida del proyecto, tomando en cuentra las etapas de formación del equipo",
+        "2" : "Desarrolla los objetivos y misión de acuerdo con el tipo de equipo y las condiciones del proyecto",
+        "3" : "Reconoce y celebra los logros, manteniendo una retroalimentación continua a todos los miembros",
+        "4" : "Entiende los requerimientos individuales de los miembros  y las circunstancias que mueven la toma de decisiones de la persona",
+        "5" : "Construye y mantiene la motivación del equipo durante todo el proyecto",
+        "name" : "TRABAJO EN EQUIPO",
+        "desc" : "Lograr que las personas trabajen colaborativamente hacia una meta común, transformando e inspirando."
+      }
+    },
+    "Técnicas" : {
+      "ENTIDADES INVOLUCRADAS":{
+        "1" : "Identifica y prioriza los intereses de las entidades involucradas",
+        "2" : "Analiza sus intereses, requerimientos y nivel de influencia",
+        "3" : "Desarrolla planes o estrategias para comunicarse efectivamente",
+        "4" : "Monitorea la efectividad del plan o estrategia",
+        "5" : "Negocia compromisos con las entidades involucradas",
+        "name": "ENTIDADES INVOLUCRADAS",
+        "desc": "Identificar, analizar y planear las acciones para comunicar, influenciar y negociar con entidades involucradas."
+      },
+      "METODOLOGIA & ENTORNO DE TRABAJO": {
+        "1" : "Entiende las metodologías o entornos de trabajo y el ciclo de vida del proyecto",
+        "2" : "Conoce el manejo procesos, técnicas y principios aplicables a la metodología o entorno de trabajo",
+        "3" : "Entiende como se integran metodologías y entornos de trabajo con los sistemas de información ",
+        "4" : "Asegura el entendimiento de todo el sistema de trabajo entre los miembros del proyecto, utilizando coaching o capacitación",
+        "5" : "Entiende como se manejan las etapas o fases en la metodología o entorno de trabajo",
+        "name": "METODOLOGIA & ENTORNO DE TRABAJO",
+        "desc": "Dominar los modelos, metodologías o entornos de trabajo para manejar el proyecto a lo largo de su ciclo de vida."
+      },
+      "ALCANCE": {
+        "1" : "Identifica y define los requerimientos y objetivos de las entidades involucradas",
+        "2" : "Acuerda los entregables usando una EDT o modelo similar de acuerdo a metodología o entorno de trabajoo",
+        "3" : "Documenta los entregables en el modelo de control establecido",
+        "4" : "Actualiza el alcance de acuerdo con los sistemas establecidos en la metodología o entorno de trabajo",
+        "5" : "Entiende y analiza los indicadores y métricas; como se integran con otros indicadores en los KPIs y tableros de control",
+        "name": "ALCANCE",
+        "desc": "Identificar y definir el alcance para conocer los entregables y el trabajo asociado."
+      },
+      "REQUERIMIENTOS" : {
+        "1" : "Recopila, documenta y obtiene acuerdos sobre los requerimientos y criterios de aceptación",
+        "2" : "Evalua prioriza requerimientos para lograr que cumplan con los objetivos del proyecto",
+        "3" : "Asegura que los requerimientos queden claros para el equipo y entidades involucradas",
+        "name": "REQUERIMIENTOS",
+        "desc": "Entender, analizar y evaluar  las necesidades de entidades involucradas y usuarios."
+      },
+      "COSTO & PRESUPUESTO": {
+        "1" : "Estima y evalúa costos usando EDTs o modelos similares",
+        "2" : "Establece y acuerda presupuesto,  incluyendo tolerancias, riesgos, supuestos y exclusiones basados en el caso de negocio o inversión",
+        "3" : "Establece los elementos del sistema para monitoreo y control, incluyendo inflación, paridades o financiamiento de ser necesario",
+        "4" : "Reporta el desempeño financiero del proyecto, con los indicadores de tendencias y proyecciones",
+        "5" : "Identifica las variaciones en los indicadores y métricas y los presenta a patrocinadores o clientes",
+        "6" : "Identifica el impacto de cambios y coordina su adecuación, reevalua el presupuesto períodicamente o por evento",
+        "7" : "Entiende y analiza los indicadores y métricas; como se integran con otros indicadores en los KPIs y tableros de control",
+        "name": "COSTO & PRESUPUESTO",
+        "desc": "Estimar costos para la conformación de un presupuesto, administrar costos  programados, actuales y estimados en relación con el presupuesto."
+      },
+      "RIESGO & ASUNTO" : {
+        "1" : "Identifica y evalua riesgos (cualitativa y cuantitativamente)",
+        "2" : "Desarrolla un plan de riesgos y asigna roles y responsabilidades",
+        "3" : "Identifica los planes de respuesta y planes de contingencia adecuados",
+        "4" : "Evalua, documenta y planea la respuesta a asuntos",
+        "5" : "Implementa sistema de respuestas a suntos y evalua cualquier implicación a futuro",
+        "6" : "Entiende y desarrolla plan específico para atender deberes legales, derechos y procesos que apliquen al proyecto, miembros del equipo y organización",
+        "name": "RIESGO & ASUNTO",
+        "desc" : "Entender y manejar los riesgos y asuntos que afectan el proyecto; minimizando amenazas y aprovechando oportunidades."
+      }
+    }
+  }
+}
