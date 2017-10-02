@@ -30,31 +30,28 @@
           <tbody>
             <tr v-for="(cluster, key, index) in filterByCluster(competencia)">
               <td>
-                {{ key }}
               </td>
               <td style="width: 85%;">
                 {{ cluster }}
               </td>
               <td>
-                <select class="form-control" v-bind:class="'a'+'_'+formIdByCluster(competencia)+'_'+key">
-                  <option value=" "></option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
+                <select class="form-control" v-bind:class="'a'+'_'+formIdByCluster(competencia)">
+                  <option value=1>1</option>
+                  <option value=2>2</option>
+                  <option value=3>3</option>
+                  <option value=4>4</option>
+                  <option value=5>5</option>
+                  <option value=6>6</option>
                 </select>
               </td>
               <td>
-                <select class="form-control" v-bind:class="'e'+'_'+formIdByCluster(competencia)+'_'+key">
-                  <option value=" "></option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
+                <select class="form-control" v-bind:class="'e'+'_'+formIdByCluster(competencia)">
+                  <option value=1>1</option>
+                  <option value=2>2</option>
+                  <option value=3>3</option>
+                  <option value=4>4</option>
+                  <option value=5>5</option>
+                  <option value=6>6</option>
                 </select>
               </td>
             </tr>
@@ -62,12 +59,14 @@
         </table>
       </div>
     </div>
-    <input id="sendForm" name="sendForm" type="submit" class="btn btn-primary btn-lg pull-right" value="Enviar Resultados">
+    <button v-on:click="calculateExam" class="btn btn-primary btn-lg pull-right">Enviar Resultados</button>
   </div>
 </template>
 
 <script>
   import Firebase from 'firebase'
+  import _ from 'underscore'
+
   let config = {
     apiKey: 'AIzaSyAuAqG-Zw7UANCBUeDc8zMzSeEASJCYdHk',
     authDomain: 'teampact360-test.firebaseapp.com',
@@ -87,17 +86,27 @@
       categorias: categoriasRef
     },
     methods: {
+      calculateExam: function (e) {
+        let selects = Array.from(document.querySelectorAll('select'))
+        let clusters = _.groupBy(selects, 'className')
+        let results = Object.values(clusters)
+                            .map(select => select.reduce((total, select, index) => {
+                              let value = select.value
+                              return total + parseInt(value)
+                            }, 0))
+        console.log(results)
+      },
       filterByCluster: function (questionsArray) {
-        let clusterArray = Object.keys(questionsArray).map(function (key, index) {
+        let clusterArray = Object.keys(questionsArray).map((key, index) => {
           if (key !== ('name' || 'desc')) {
             return questionsArray[key]
           }
         })
         return clusterArray.filter(e => e)
       },
-      filterByCompetencia: function (competenciaArray) {
-        delete competenciaArray['.key']
-        return competenciaArray
+      filterByCompetencia: function (competencyArray) {
+        delete competencyArray['.key']
+        return competencyArray
       },
       formIdByCluster: function (questionsArray) {
         return questionsArray.name.replace(/ /g, '-').toLowerCase()
