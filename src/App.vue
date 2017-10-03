@@ -79,22 +79,42 @@
   let app = Firebase.initializeApp(config)
   let db = app.database()
   let categoriasRef = db.ref('categorias')
+  let usersRef = db.ref('usuarios')
 
   export default {
     name: 'app',
     firebase: {
-      categorias: categoriasRef
+      categorias: categoriasRef,
+      users: usersRef
     },
     methods: {
       calculateExam: function (e) {
         let selects = Array.from(document.querySelectorAll('select'))
+        // Group them by class
         let clusters = _.groupBy(selects, 'className')
-        let results = Object.values(clusters)
-                            .map(select => select.reduce((total, select, index) => {
-                              let value = select.value
-                              return total + parseInt(value)
-                            }, 0))
-        console.log(results)
+        let resultsAverageNotPaired = this.clustersArray(clusters)
+        let resultPaired = this.pairArray(resultsAverageNotPaired)
+        console.log(resultPaired)
+        // Push data to firebase
+        // usersRef.push(resultsAverage)
+      },
+      // Iterate over cluster results by class, get their value and return the average
+      clustersArray: function (clusterObject) {
+        let clusterResults = Object.values(clusterObject).map(select => select.reduce((total, select, index) => {
+          let value = select.value
+          return total + parseInt(value)
+        }, 0) / (select.length || 1))
+        return clusterResults
+      },
+      // Pair array per cluster
+      pairArray: function (resultsArray) {
+        let resultPaired = resultsArray.reduce((result, value, index, array) => {
+          if (index % 2 === 0) {
+            result.push(array.slice(index, index + 2))
+          }
+          return result
+        }, [])
+        return resultPaired
       },
       filterByCluster: function (questionsArray) {
         let clusterArray = Object.keys(questionsArray).map((key, index) => {
