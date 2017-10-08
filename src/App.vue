@@ -3,10 +3,11 @@
     <div class="page-header">
       <h1>Teampact360 Assessment</h1>
     </div>
+    <button v-on:click="calculateExam" class="btn btn-primary btn-lg pull-right">Enviar Resultados</button>
     <div class="panel-heading" v-for="categoria in categorias">
       <h3 class="panel-title">{{categoria['.key']}}</h3>
       <div class="panel-body" v-for="competencia in filterByCompetencia(categoria)">
-        <table class="table table-striped table-responsive">
+        <table class="table table-striped table-responsive" v-bind:class="formIdByCluster(competencia)">
           <thead>
             <tr>
               <th colspan="4">{{competencia.name}}</th>
@@ -59,7 +60,6 @@
         </table>
       </div>
     </div>
-    <button v-on:click="calculateExam" class="btn btn-primary btn-lg pull-right">Enviar Resultados</button>
   </div>
 </template>
 
@@ -93,8 +93,10 @@
         // Group them by class
         let clusters = _.groupBy(selects, 'className')
         let resultsAverageNotPaired = this.clustersArray(clusters)
-        let resultPaired = this.pairArray(resultsAverageNotPaired)
-        console.log(resultPaired)
+        let resultPaired = this.resultsPaired(resultsAverageNotPaired)
+        let cleanClusters = this.cleanClusters()
+        let nameResultsPaired = this.nameResultsPaired(resultPaired, cleanClusters)
+        console.log(nameResultsPaired)
         // Push data to firebase
         // usersRef.push(resultsAverage)
       },
@@ -106,15 +108,28 @@
         }, 0) / (select.length || 1))
         return clusterResults
       },
-      // Pair array per cluster
-      pairArray: function (resultsArray) {
-        let resultPaired = resultsArray.reduce((result, value, index, array) => {
+      // Pair object per cluster
+      resultsPaired: function (resultsArray) {
+        let resultsPaired = resultsArray.reduce((result, value, index, array) => {
           if (index % 2 === 0) {
             result.push(array.slice(index, index + 2))
           }
           return result
         }, [])
-        return resultPaired
+        return resultsPaired
+      },
+      nameResultsPaired: function (resultsPaired, cleanClusters) {
+        console.log({resultsPaired, cleanClusters})
+      },
+      cleanClusters: function () {
+        let questions = Array.from(document.querySelectorAll('table'))
+        // Group them by class
+        let clusters = _.groupBy(questions, 'className')
+        let cleanCluster = Object.keys(clusters).map(function (key, index) {
+          let splittedKeys = key.split(' ')
+          return splittedKeys.slice(-1)[0]
+        })
+        return cleanCluster
       },
       filterByCluster: function (questionsArray) {
         let clusterArray = Object.keys(questionsArray).map((key, index) => {
