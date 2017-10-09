@@ -90,13 +90,13 @@
     methods: {
       calculateExam: function (e) {
         let selects = Array.from(document.querySelectorAll('select'))
-        // Group them by class
         let clusters = _.groupBy(selects, 'className')
+        let cleanClusters = this.cleanClusters()
         let resultsAverageNotPaired = this.clustersArray(clusters)
         let resultPaired = this.resultsPaired(resultsAverageNotPaired)
-        let cleanClusters = this.cleanClusters()
-        let nameResultsPaired = this.nameResultsPaired(resultPaired, cleanClusters)
-        console.log(nameResultsPaired)
+        let fixedResults = this.resultsToFixedDecimals(resultPaired)
+        let resultsMatched = this.matchResultsPaired(cleanClusters, fixedResults)
+        console.log(resultsMatched)
         // Push data to firebase
         // usersRef.push(resultsAverage)
       },
@@ -108,7 +108,7 @@
         }, 0) / (select.length || 1))
         return clusterResults
       },
-      // Pair object per cluster
+      // Make pairs by 'Application and Expertise' per cluster
       resultsPaired: function (resultsArray) {
         let resultsPaired = resultsArray.reduce((result, value, index, array) => {
           if (index % 2 === 0) {
@@ -118,14 +118,26 @@
         }, [])
         return resultsPaired
       },
-      nameResultsPaired: function (resultsPaired, cleanClusters) {
-        console.log({resultsPaired, cleanClusters})
+      // Fix to 2 decimals the results of the test
+      resultsToFixedDecimals: function (resultsPaired) {
+        resultsPaired.forEach(result => {
+          result.forEach((value, index) => {
+            let valueFixed = parseFloat(value.toFixed(1))
+            result[index] = valueFixed
+          })
+        })
+        return resultsPaired
+      },
+      // Merge together the results with the cluster name
+      matchResultsPaired: function (cleanClusters, resultsPaired) {
+        let objectPaired = _.object(cleanClusters, resultsPaired)
+        return objectPaired
       },
       cleanClusters: function () {
         let questions = Array.from(document.querySelectorAll('table'))
         // Group them by class
         let clusters = _.groupBy(questions, 'className')
-        let cleanCluster = Object.keys(clusters).map(function (key, index) {
+        let cleanCluster = Object.keys(clusters).map((key, index) => {
           let splittedKeys = key.split(' ')
           return splittedKeys.slice(-1)[0]
         })
