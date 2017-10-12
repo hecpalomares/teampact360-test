@@ -5,13 +5,17 @@
     </div>
     <form>
       <div class="row">
-        <div class="form-group col-sm-6">
+        <div class="form-group col-sm-3">
           <label for="name">Nombre</label>
-          <input type="text" class="form-control" id="name">
+          <input type="text" class="form-control" id="name" v-model="name">
+        </div>
+        <div class="form-group col-sm-3">
+          <label for="name">Apellido</label>
+          <input type="text" class="form-control" id="lastname" v-model="lastname">
         </div>
         <div class="form-group col-sm-6">
-          <label for="name">Apellido</label>
-          <input type="text" class="form-control" id="lastname">
+          <label for="name">Correo Electrónico</label>
+          <input type="email" class="form-control" id="email" v-model="email">
         </div>
       </div>
     </form>
@@ -71,7 +75,10 @@
         </table>
       </div>
     </div>
-    <button v-on:click="calculateExam" class="btn btn-primary btn-lg pull-right">Enviar Resultados</button>
+    <div style="display: flex; flex-direction: column; align-items: flex-end;">
+      <p class="small text-danger" v-if="!isValid">Es necesario completar los campos de nombre, apellido y correo electrónico para enviar los resultados.</p>
+      <button style="width:200px" v-on:click="calculateExam" v-bind:disabled="!isValid" class="btn btn-primary btn-lg">Enviar Resultados</button>
+    </div>
   </div>
 </template>
 
@@ -99,6 +106,18 @@
       categorias: categoriasRef,
       resultados: resultsRef
     },
+    data () {
+      return {
+        name: '',
+        email: '',
+        lastname: ''
+      }
+    },
+    computed: {
+      isValid: function () {
+        return ((this.name !== '') && (this.lastname !== '') && (this.email !== ''))
+      }
+    },
     methods: {
       calculateExam: function (e) {
         let selects = Array.from(document.querySelectorAll('select'))
@@ -112,15 +131,14 @@
         this.addResults(resultsMatched, fullName)
       },
       addResults: function (resultsMatched, fullName) {
-        console.log(resultsMatched, fullName)
-        debugger
+        resultsMatched['_fullName'] = fullName
         resultsRef.push(resultsMatched)
       },
       // Get the full name from the input fields and concat them
       getName: function () {
         let name = document.querySelector('#name')
         let lastname = document.querySelector('#lastname')
-        let completeName = `${name.value} ${lastname.value}`
+        let completeName = `${name.value}-${lastname.value}`
 
         return completeName
       },
