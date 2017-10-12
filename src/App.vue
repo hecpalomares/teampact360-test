@@ -1,10 +1,11 @@
 <template>
   <div id="app" class="container" style="margin-bottom: 30px;">
     <div class="page-header">
-      <h2>Teampact360 DCDP Assessment</h2>
+      <h2 style="text-align: center;">Teampact360 DCDP Assessment</h2>
     </div>
     <form>
       <div class="row">
+      <h4>Datos del contacto</h4>
         <div class="form-group col-sm-3">
           <label for="name">Nombre</label>
           <input type="text" class="form-control" id="name" v-model="name">
@@ -19,6 +20,7 @@
         </div>
       </div>
     </form>
+    <hr>
     <div class="panel-heading" v-for="categoria in categorias">
       <h3 class="panel-title">{{categoria['.key']}}</h3>
       <div class="panel-body" v-for="competencia in filterByCompetencia(categoria)">
@@ -75,6 +77,7 @@
         </table>
       </div>
     </div>
+    <hr>
     <div style="display: flex; flex-direction: column; align-items: flex-end;">
       <p class="small text-danger" v-if="!isValid">Es necesario completar los campos de nombre, apellido y correo electrónico para enviar los resultados.</p>
       <button style="width:200px" v-on:click="calculateExam" v-bind:disabled="!isValid" class="btn btn-primary btn-lg">Enviar Resultados</button>

@@ -1,0 +1,207 @@
+{
+  "categorias" : {
+    "Organización" : {
+      "CULTURA ORGANIZACIONAL" : {
+        "1" : "Entiende la cultura de la organización para adaptarlo a los modelos de gestión",
+        "2" : "Define y prepara los equipos de  proyecto para el entendimiento de su rol y responsabilidad dentro del contexto cultural",
+        "3" : "Entiende el sector o industria en el que se encuentra su organización y tiene la capacidad de describirlos con claridad",
+        "desc" : " Entender la cultura organizaciónal dentro del cual el proyecto esta incluído, para reconocer como el modelo de gestión y sus equipos se adaptan al entorno.",
+        "name" : "CULTURA ORGANIZACIONAL"
+      },
+      "ESTABILIDAD & IDENTIDAD" : {
+        "1" : "Crea un sentido de pertenencia e identidad en el equipo de proyecto",
+        "2" : "Es un embajador del proyecto, presentandolo de manera clara, objetiva y contundente",
+        "3" : "Resuelve conflictos entre el proyecto y la organización",
+        "4" : "Protege el proyecto de \"ruidos\" y políticas internas en la organización",
+        "desc" : "Observar y adecuar el proyecto para su interacción con la organización y otras entidades externas, promoviendo el mejor funcionamiento dentro de un contexto más amplio.",
+        "name" : "ESTABILIDAD & IDENTIDAD"
+      },
+      "ESTRUCTURA ORGANIZACIONAL" : {
+        "1" : "Entiende el tipo de estructura (funcional, híbrida o proyectizada) para el diseño del modelo de gestión",
+        "2" : "Identifica las unidades y departamentos que proveen recursos al proyecto",
+        "3" : "Define roles y responsabilidades para establecer la interfaz entre el proyecto y las diferentes unidades de la organización",
+        "4" : "Acuerda los mecanismos para obtener los recursos dentro de la estructura organizacional",
+        "5" : "Determina los requerimientos de la oficina del proyecto y acuerda los límites de autoridad y posición dentro de la organización",
+        "desc" : "Entender la estructura organizacional dentro del cual el proyecto esta incluido, para reconocer la jerarquía en la toma de decisiones y el nivel de información para las entidades dentro de la organización.",
+        "name" : "ESTRUCTURA ORGANIZACIONAL"
+      },
+      "FINANCIAMIENTO" : {
+        "1" : "Entiende el modelo de financiamiento, origen de fondos y los esquemas para trámitar la disponibilidad de recursos",
+        "2" : "Calcula el uso de recursos financieros y flujos para el fondeo del proyecto con al aprobación del patrocinador u organización",
+        "3" : "Establece los procedimientos o controles internos para las solicitudes, autorización o liberación de fondos",
+        "4" : "Valida los presupuestos, pronósticos y análisis de valor ganado; para reportar a patrocinadores u organización",
+        "desc" : "Entender los medios de fondeo del proyecto, para gestionar disponibilidad de recursos ante directores de programa o portafolio, patrocinadores, clientes u organización.",
+        "name" : "FINANCIAMIENTO"
+      }
+    },
+    "Personal" : {
+      "APRENDIZAJE Y DESARROLLO" : {
+        "1" : "Promueve  programas de aprendizaje y desarrollo de acuerdo con políticas de organización o necesidades de proyecto",
+        "2" : "Evalúa los resultados de niveles de competencia y brechas para identificar necesidades de desarrollo o aprendizaje personales y del equipo",
+        "3" : "Considera aprendizaje y desarrollo como una actividad de toda la vida, esta consiente de  las necesidades de desarrollo continuo profesional y personal",
+        "desc" : "Aprender y desarrollarse continuamente en las competencias de su profesión.",
+        "name" : "APRENDIZAJE Y DESARROLLO"
+      },
+      "AUTOGESTIÓN" : {
+        "1" : "Tiene una actitud positiva y proactiva para construir confianza y credibilidad dentro del equipo y entidades involudradas",
+        "2" : "Es abierto a nuevas ideas, prácticas y métodos, abierto a la pluralidad de opiniones",
+        "3" : "Mantiene un comportamiento congruente a requerimientos del proyecto, necesidades de patrocinador, el entorno y la organización",
+        "4" : "Defiende su posición cuando tiene elementos para hacerlo",
+        "desc" : "La forma de actuar, interactuar y reaccionar en situaciones diversas de cada persona.",
+        "name" : "AUTOGESTIÓN"
+      },
+      "CONFLICTO" : {
+        "1" : "Maneja las diferencias entre las entidades involucradas, reconociendo sus niveles de influencia y poder",
+        "2" : "Anticipa y se prepara para situaciones de potencial conflicto, que pueden impactar al proyecto",
+        "3" : "Identifica cuando las situaciones de conflicto aparecen y se asegura que las técnicas adecuadas de resolución de conflicto son empleadas para resolución efectiva",
+        "4" : "Asegura que las entidades apropiadas estén enteradas de como se logro la resolución y cierre del conflicto",
+        "5" : "Reconoce cuando hay que involucrar a patrocinadores o escalar el nivel decisión para resolución de disputas y conflictos",
+        "desc" : "Identificar y manejar diferencias entre todas las entidades involucradas internas o externas, para evitar afectaciones al proyecto.",
+        "name" : "CONFLICTO"
+      },
+      "LIDERAZGO" : {
+        "1" : "Promueve la visión del proyecto, reforzando la actitud positiva y proactiva durante todo el ciclo de vida de proyecto",
+        "2" : "Determina el tipo de liderazgo apropiado a cada situación o etapa del proyecto, y lo adapta en su comportamiento",
+        "3" : "Crea ambientes de promueven el alto desempeño y permitan a las personas alcanzar todo su potencial",
+        "desc" : "Establecer la visión y dirección para alinear a a las personas de su área de influencia hacia un propósito común, guiar y empoderar a las personas en busca de logros del proyecto.",
+        "name" : "LIDERAZGO"
+      },
+      "NEGOCIACIÓN" : {
+        "1" : "Decide la posición mínima aceptable de una negociación y el nivel de negociación asignado de cada parte",
+        "2" : "Recolecta y analiza la información disponible y presenta opciones de acuerdos",
+        "3" : "Establece su estrategia de negociación, motivaciones, requerimientos y solicitudes de las partes",
+        "4" : "Negocia en la medida de sus responsabilidades manteniendo una relación personal positiva entre las partes involucradas",
+        "5" : "Asegura que el resultado es documentado y comunicado a las entidades que correspondan",
+        "desc" : "Busqueda de acuerdos, aceptación y consenso para alinear posiciones de manera formal o informal.",
+        "name" : "NEGOCIACIÓN"
+      },
+      "PROFESIONALISMO & ETICA" : {
+        "1" : "Presenta con honestidad el nivel de competencia evidenciado con desarrollo profesional continuo, certificaciones, conocimiento o experiencia",
+        "2" : "Adopta moral, legal y socialmente conductas de comportamiento y trabajo con los miembros de equipo y otras entidades involucradas",
+        "3" : "Promueve la cultura de integridad y honestidad en el proyecto",
+        "desc" : "El profesionalismo como la conciencia en aplicación de cualidades y competencias de conocimiento, habilidades y comportamiento. La Etica como los principios morales y conducta reconocidos como apropiados en la profesión de Direccion de Proyectos.",
+        "name" : "PROFESIONALISMO & ETICA"
+      },
+      "TRABAJO EN EQUIPO" : {
+        "1" : "Construye y mantiene un equipo efectivo en todo el ciclo de vida del proyecto, tomando en cuentra las etapas de formación del equipo",
+        "2" : "Desarrolla los objetivos y misión de acuerdo con el tipo de equipo y las condiciones del proyecto",
+        "3" : "Reconoce y celebra los logros, manteniendo una retroalimentación continua a todos los miembros",
+        "4" : "Entiende los requerimientos individuales de los miembros  y las circunstancias que mueven la toma de decisiones de la persona",
+        "5" : "Construye y mantiene la motivación del equipo durante todo el proyecto",
+        "desc" : "Lograr que las personas trabajen colaborativamente hacia una meta común, transformando e inspirando.",
+        "name" : "TRABAJO EN EQUIPO"
+      }
+    },
+    "Técnicas" : {
+      "ALCANCE" : {
+        "1" : "Identifica y define los requerimientos y objetivos de las entidades involucradas",
+        "2" : "Acuerda los entregables usando una EDT o modelo similar de acuerdo a metodología o entorno de trabajoo",
+        "3" : "Documenta los entregables en el modelo de control establecido",
+        "4" : "Actualiza el alcance de acuerdo con los sistemas establecidos en la metodología o entorno de trabajo",
+        "5" : "Entiende y analiza los indicadores y métricas; como se integran con otros indicadores en los KPIs y tableros de control",
+        "desc" : "Identificar y definir el alcance para conocer los entregables y el trabajo asociado.",
+        "name" : "ALCANCE"
+      },
+      "CALIDAD" : {
+        "1" : "Entiende y acuerda las expectativas y criterios de calidad con las entidades involucradas",
+        "2" : "Desarrolla el enfoque de calidad y la conformación del sistema de calidad requerido",
+        "3" : "Acuerda el contenido y los procedimientos de planeación, control y aseguramiento alineados con el cliente",
+        "4" : "Mantiene el sistema de calidad, incluyendo actividades y resultados",
+        "5" : "Recomienda y aplica acciones de mejora continua, preventivas y correctivas",
+        "6" : "Entiende y analiza los indicadores y métricas; como se integran con otros indicadores en los KPIs y tableros de control",
+        "desc" : "Asegurar que el sistema de trabajo y las salidas del proyecto cumplan con los requerimientos de clientes, patrocinadores y otras entidades involucradas",
+        "name" : "CALIDAD"
+      },
+      "CAMBIO" : {
+        "1" : "Decide e implementa la política de control de cambios establecida por la metodología o entorno de trabajo",
+        "2" : "Establece y dirige los cambios para identificar el área de afectación (positiva o negativa)",
+        "3" : "Conduce análisis de impacto y consecuencias en los indicadores establecidos para el proyecto",
+        "4" : "Planea, controla o autoriza los cambios de acuerdo con su rol o responsabilidad",
+        "5" : "Mantiene el registro del sistema de acuerdo con lo establecido en la metodología o entorno de trabajo",
+        "desc" : "Asegurar que los cambios establecidos por la metodología y entorno de trabajo  puedan ser identificados, evaluados, aprobados, rechazados o diferidos. Los 5 indicadores de cambio normlamente controlados son requerimientos, alcance, programación, costo y calidad",
+        "name" : "CAMBIO"
+      },
+      "COSTO & PRESUPUESTO" : {
+        "1" : "Estima y evalúa costos usando EDTs o modelos similares",
+        "2" : "Establece y acuerda presupuesto,  incluyendo tolerancias, riesgos, supuestos y exclusiones basados en el caso de negocio o inversión",
+        "3" : "Establece los elementos del sistema para monitoreo y control, incluyendo inflación, paridades o financiamiento de ser necesario",
+        "4" : "Reporta el desempeño financiero del proyecto, con los indicadores de tendencias y proyecciones",
+        "5" : "Identifica las variaciones en los indicadores y métricas y los presenta a patrocinadores o clientes",
+        "6" : "Identifica el impacto de cambios y coordina su adecuación, reevalua el presupuesto períodicamente o por evento",
+        "7" : "Entiende y analiza los indicadores y métricas; como se integran con otros indicadores en los KPIs y tableros de control",
+        "desc" : "Estimar costos para la conformación de un presupuesto, administrar costos  programados, actuales y estimados en relación con el presupuesto.",
+        "name" : "COSTO & PRESUPUESTO"
+      },
+      "ENTIDADES INVOLUCRADAS" : {
+        "1" : "Identifica y prioriza los intereses de las entidades involucradas",
+        "2" : "Analiza sus intereses, requerimientos y nivel de influencia",
+        "3" : "Desarrolla planes o estrategias para comunicarse efectivamente",
+        "4" : "Monitorea la efectividad del plan o estrategia",
+        "5" : "Negocia compromisos con las entidades involucradas",
+        "desc" : "Identificar, analizar y planear las acciones para comunicar, influenciar y negociar con entidades involucradas.",
+        "name" : "ENTIDADES INVOLUCRADAS"
+      },
+      "INFORMACIÓN & COMUNICACIÓN" : {
+        "1" : "Planea el sistema de información para cumplir con entidades involucradas asegurando todas las necesidades de comunicación",
+        "2" : "Asegura que se cumplan con las políticas y regulaciones para manejo de datos e información en la organización",
+        "3" : "Implementa el sistema de información",
+        "4" : "Audita el manejo del sistema y reportes generados",
+        "desc" : "Administrar la recolección, diseminación, archivo y destrucción de la información en todos sus canales y formatos. ",
+        "name" : "INFORMACIÓN & COMUNICACIÓN"
+      },
+      "METODOLOGIA & ENTORNO DE TRABAJO" : {
+        "1" : "Entiende las metodologías o entornos de trabajo y el ciclo de vida del proyecto",
+        "2" : "Conoce el manejo procesos, técnicas y principios aplicables a la metodología o entorno de trabajo",
+        "3" : "Entiende como se integran metodologías y entornos de trabajo con los sistemas de información ",
+        "4" : "Asegura el entendimiento de todo el sistema de trabajo entre los miembros del proyecto, utilizando coaching o capacitación",
+        "5" : "Entiende como se manejan las etapas o fases en la metodología o entorno de trabajo",
+        "desc" : "Dominar los modelos, metodologías o entornos de trabajo para manejar el proyecto a lo largo de su ciclo de vida.",
+        "name" : "METODOLOGIA & ENTORNO DE TRABAJO"
+      },
+      "PROCURA" : {
+        "1" : "Identifica tipo, calidad y cantidad del recurso  basado en información actualizada",
+        "2" : "Mantiene los criterios establecidos en los convenios o contratos, y una relación productiva con proveedores",
+        "3" : "Mantiene la responsabilidad de evaluar el desempeño del producto o servicio dentro de los requerimientos emitidos",
+        "4" : "Mantiene un sistema de evaluación, selección y negociación de procura de recursos o servicios",
+        "5" : "Monitorea el desempeño de productos y servicios en relación con las obligaciones contractuales",
+        "6" : "Reacciona para resolver cualquier problema relacionado con los términos del contrato, incluyendo negociaciones y disputas",
+        "7" : "Mantiene un procedimiento de cierre del contrato para asegurar el cumplimiento de las condiciones contractuales y las implicaciones futuras",
+        "desc" : "Asegurar la provisión de productos o servicios necesarios, considerando entregas con el grado de calidad requerida, en tiempo y dentro del presupuesto; manteniendo una relación productiva con proveedores internos y/o externos",
+        "name" : "PROCURA"
+      },
+      "PROGRAMACIÓN" : {
+        "1" : "Define la secuencias lógicas y dependencias entre actividades, sprints y/o paquetes de trabajo",
+        "2" : "Identifica estimados de esfuerzo, restricciones en recursos, fases e hitos y utiliza las mejores prácticas de la metodología o entorno de trabajo",
+        "3" : "Compara programación estimada con real y propone acciones correctivas o adecuaciones a los escenarios ",
+        "4" : "Entiende y analiza los indicadores y métricas; como se integran con otros indicadores en los KPIs y tableros de control",
+        "desc" : "Determinar la duración general, eventos y actividades. Incluyendo la identificaicón de dependencias lógicas, disponiblidad de recursos, requerimientos y entornos de trabajo.",
+        "name" : "PROGRAMACIÓN"
+      },
+      "RECURSO HUMANO" : {
+        "1" : "Identifica las competencias del personal",
+        "2" : "Optimiza la programación y nivelación de recursos ",
+        "3" : "Obtiene los recursos de acuerdo a las políticas estructurales y culturales de la organización",
+        "4" : "Verifica las condiciones y rendimientos del personal",
+        "desc" : "Identificar y asignar a las personas de acuerdo a su capacidad y disponibilidad, utilizando los niveles apropiados de utilización que determina el proyecto",
+        "name" : "RECURSO HUMANO"
+      },
+      "REQUERIMIENTOS" : {
+        "1" : "Recopila, documenta y obtiene acuerdos sobre los requerimientos y criterios de aceptación",
+        "2" : "Evalua prioriza requerimientos para lograr que cumplan con los objetivos del proyecto",
+        "3" : "Asegura que los requerimientos queden claros para el equipo y entidades involucradas",
+        "desc" : "Entender, analizar y evaluar  las necesidades de entidades involucradas y usuarios.",
+        "name" : "REQUERIMIENTOS"
+      },
+      "RIESGO & ASUNTO" : {
+        "1" : "Identifica y evalua riesgos (cualitativa y cuantitativamente)",
+        "2" : "Desarrolla un plan de riesgos y asigna roles y responsabilidades",
+        "3" : "Identifica los planes de respuesta y planes de contingencia adecuados",
+        "4" : "Evalua, documenta y planea la respuesta a asuntos",
+        "5" : "Implementa sistema de respuestas a suntos y evalua cualquier implicación a futuro",
+        "6" : "Entiende y desarrolla plan específico para atender deberes legales, derechos y procesos que apliquen al proyecto, miembros del equipo y organización",
+        "desc" : "Entender y manejar los riesgos y asuntos que afectan el proyecto; minimizando amenazas y aprovechando oportunidades.",
+        "name" : "RIESGO & ASUNTO"
+      }
+    }
+  }
+}
