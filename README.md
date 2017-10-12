@@ -1,6 +1,9 @@
-# teampact360-test
+# Teampact 360 DCDP Assessment
 
-> for https://teampact360.com to do the assessment test.
+- Made with Vue.js 2.0
+- Firebase as external database
+
+> For https://teampact360.com to do the DCDP Assessment
 
 ## Build Setup
 

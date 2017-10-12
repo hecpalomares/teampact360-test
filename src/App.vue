@@ -1,9 +1,20 @@
 <template>
-  <div id="app" class="container">
+  <div id="app" class="container" style="margin-bottom: 30px;">
     <div class="page-header">
-      <h1>Teampact360 Assessment</h1>
+      <h2>Teampact360 DCDP Assessment</h2>
     </div>
-    <button v-on:click="calculateExam" class="btn btn-primary btn-lg pull-right">Enviar Resultados</button>
+    <form>
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <label for="name">Nombre</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group col-sm-6">
+          <label for="name">Apellido</label>
+          <input type="text" class="form-control" id="lastname">
+        </div>
+      </div>
+    </form>
     <div class="panel-heading" v-for="categoria in categorias">
       <h3 class="panel-title">{{categoria['.key']}}</h3>
       <div class="panel-body" v-for="competencia in filterByCompetencia(categoria)">
@@ -60,6 +71,7 @@
         </table>
       </div>
     </div>
+    <button v-on:click="calculateExam" class="btn btn-primary btn-lg pull-right">Enviar Resultados</button>
   </div>
 </template>
 
@@ -79,26 +91,38 @@
   let app = Firebase.initializeApp(config)
   let db = app.database()
   let categoriasRef = db.ref('categorias')
-  let usersRef = db.ref('usuarios')
+  let resultsRef = db.ref('resultados')
 
   export default {
     name: 'app',
     firebase: {
       categorias: categoriasRef,
-      users: usersRef
+      resultados: resultsRef
     },
     methods: {
       calculateExam: function (e) {
         let selects = Array.from(document.querySelectorAll('select'))
         let clusters = _.groupBy(selects, 'className')
+        let fullName = this.getName()
         let cleanClusters = this.cleanClusters()
         let resultsAverageNotPaired = this.clustersArray(clusters)
         let resultPaired = this.resultsPaired(resultsAverageNotPaired)
         let fixedResults = this.resultsToFixedDecimals(resultPaired)
         let resultsMatched = this.matchResultsPaired(cleanClusters, fixedResults)
-        console.log(resultsMatched)
-        // Push data to firebase
-        // usersRef.push(resultsAverage)
+        this.addResults(resultsMatched, fullName)
+      },
+      addResults: function (resultsMatched, fullName) {
+        console.log(resultsMatched, fullName)
+        debugger
+        resultsRef.push(resultsMatched)
+      },
+      // Get the full name from the input fields and concat them
+      getName: function () {
+        let name = document.querySelector('#name')
+        let lastname = document.querySelector('#lastname')
+        let completeName = `${name.value} ${lastname.value}`
+
+        return completeName
       },
       // Iterate over cluster results by class, get their value and return the average
       clustersArray: function (clusterObject) {
