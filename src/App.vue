@@ -125,25 +125,28 @@
       calculateExam: function (e) {
         let selects = Array.from(document.querySelectorAll('select'))
         let clusters = _.groupBy(selects, 'className')
-        let fullName = this.getName()
+        let contactDetails = this.getContactDetails()
         let cleanClusters = this.cleanClusters()
         let resultsAverageNotPaired = this.clustersArray(clusters)
         let resultPaired = this.resultsPaired(resultsAverageNotPaired)
         let fixedResults = this.resultsToFixedDecimals(resultPaired)
         let resultsMatched = this.matchResultsPaired(cleanClusters, fixedResults)
-        this.addResults(resultsMatched, fullName)
+        this.addResults(resultsMatched, contactDetails)
       },
-      addResults: function (resultsMatched, fullName) {
-        resultsMatched['_fullName'] = fullName
+      addResults: function (resultsMatched, contactDetails) {
+        resultsMatched['_name'] = contactDetails.completeName
+        resultsMatched['_email'] = contactDetails.email
+        debugger
         resultsRef.push(resultsMatched)
       },
       // Get the full name from the input fields and concat them
-      getName: function () {
+      getContactDetails: function () {
         let name = document.querySelector('#name')
         let lastname = document.querySelector('#lastname')
-        let completeName = `${name.value}-${lastname.value}`
-
-        return completeName
+        let email = document.querySelector('#email').value
+        let completeName = `${name.value} ${lastname.value}`
+        let details = {completeName, email}
+        return details
       },
       // Iterate over cluster results by class, get their value and return the average
       clustersArray: function (clusterObject) {
@@ -190,7 +193,7 @@
       },
       filterByCluster: function (questionsArray) {
         let clusterArray = Object.keys(questionsArray).map((key, index) => {
-          if (key !== ('name' || 'desc')) {
+          if (key !== 'name' && key !== 'desc') {
             return questionsArray[key]
           }
         })
