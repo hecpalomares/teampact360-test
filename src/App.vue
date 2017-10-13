@@ -3,84 +3,90 @@
     <div class="page-header">
       <h2 style="text-align: center;">Teampact360 DCDP Assessment</h2>
     </div>
-    <form>
-      <div class="row">
-      <h4>Datos del contacto</h4>
-        <div class="form-group col-sm-3">
-          <label for="name">Nombre</label>
-          <input type="text" class="form-control" id="name" v-model="name">
+    <div v-if="showAssessment" id="assessment">
+      <form>
+        <div class="row">
+        <h4>Datos del contacto</h4>
+          <div class="form-group col-sm-3">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" id="name" v-model="name">
+          </div>
+          <div class="form-group col-sm-3">
+            <label for="name">Apellido</label>
+            <input type="text" class="form-control" id="lastname" v-model="lastname">
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="name">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email" v-model="email">
+          </div>
         </div>
-        <div class="form-group col-sm-3">
-          <label for="name">Apellido</label>
-          <input type="text" class="form-control" id="lastname" v-model="lastname">
-        </div>
-        <div class="form-group col-sm-6">
-          <label for="name">Correo Electrónico</label>
-          <input type="email" class="form-control" id="email" v-model="email">
+      </form>
+      <hr>
+      <div class="panel-heading" v-for="categoria in categorias">
+        <h3 class="panel-title">{{categoria['.key']}}</h3>
+        <div class="panel-body" v-for="competencia in filterByCompetencia(categoria)">
+          <table class="table table-striped table-responsive" v-bind:class="formIdByCluster(competencia)">
+            <thead>
+              <tr>
+                <th colspan="4">{{competencia.name}}</th>
+              </tr>
+              <tr>
+                <th colspan="4">{{competencia.desc}}</th>
+              </tr>
+              <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                  Aplicación
+                </th>
+                <th>
+                  Expertise
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(cluster, key, index) in filterByCluster(competencia)">
+                <td>
+                </td>
+                <td style="width: 85%;">
+                  {{ cluster }}
+                </td>
+                <td>
+                  <select class="form-control" v-bind:class="'a'+'_'+formIdByCluster(competencia)">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                  </select>
+                </td>
+                <td>
+                  <select class="form-control" v-bind:class="'e'+'_'+formIdByCluster(competencia)">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-    </form>
-    <hr>
-    <div class="panel-heading" v-for="categoria in categorias">
-      <h3 class="panel-title">{{categoria['.key']}}</h3>
-      <div class="panel-body" v-for="competencia in filterByCompetencia(categoria)">
-        <table class="table table-striped table-responsive" v-bind:class="formIdByCluster(competencia)">
-          <thead>
-            <tr>
-              <th colspan="4">{{competencia.name}}</th>
-            </tr>
-            <tr>
-              <th colspan="4">{{competencia.desc}}</th>
-            </tr>
-            <tr>
-              <th>
-              </th>
-              <th>
-              </th>
-              <th>
-                Aplicación
-              </th>
-              <th>
-                Expertise
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(cluster, key, index) in filterByCluster(competencia)">
-              <td>
-              </td>
-              <td style="width: 85%;">
-                {{ cluster }}
-              </td>
-              <td>
-                <select class="form-control" v-bind:class="'a'+'_'+formIdByCluster(competencia)">
-                  <option value=1>1</option>
-                  <option value=2>2</option>
-                  <option value=3>3</option>
-                  <option value=4>4</option>
-                  <option value=5>5</option>
-                  <option value=6>6</option>
-                </select>
-              </td>
-              <td>
-                <select class="form-control" v-bind:class="'e'+'_'+formIdByCluster(competencia)">
-                  <option value=1>1</option>
-                  <option value=2>2</option>
-                  <option value=3>3</option>
-                  <option value=4>4</option>
-                  <option value=5>5</option>
-                  <option value=6>6</option>
-                </select>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <hr>
+      <div style="display: flex; flex-direction: column; align-items: flex-end;">
+        <p class="small text-danger" v-if="!isValid">Es necesario completar los campos de nombre, apellido y correo electrónico para enviar los resultados.</p>
+        <button style="width:200px" v-on:click="calculateExam" v-bind:disabled="!isValid" class="btn btn-primary btn-lg">Enviar Resultados</button>
       </div>
     </div>
-    <hr>
-    <div style="display: flex; flex-direction: column; align-items: flex-end;">
-      <p class="small text-danger" v-if="!isValid">Es necesario completar los campos de nombre, apellido y correo electrónico para enviar los resultados.</p>
-      <button style="width:200px" v-on:click="calculateExam" v-bind:disabled="!isValid" class="btn btn-primary btn-lg">Enviar Resultados</button>
+    <div v-if="!showAssessment" id="finish">
+      <h2 >Gracias {{ name }} {{ lastname }} tus resultados fueron enviados de manera exitosa.</h2>
+      <a href='https:www.teampact360.com'>Volver al sitio</a>
     </div>
   </div>
 </template>
@@ -113,7 +119,8 @@
       return {
         name: '',
         email: '',
-        lastname: ''
+        lastname: '',
+        showAssessment: true
       }
     },
     computed: {
@@ -131,13 +138,18 @@
         let resultPaired = this.resultsPaired(resultsAverageNotPaired)
         let fixedResults = this.resultsToFixedDecimals(resultPaired)
         let resultsMatched = this.matchResultsPaired(cleanClusters, fixedResults)
-        this.addResults(resultsMatched, contactDetails)
+        this.pushResultsToFirebase(resultsMatched, contactDetails)
+        this.showEndScreen()
       },
-      addResults: function (resultsMatched, contactDetails) {
+      // Push results and add name and email to the query
+      pushResultsToFirebase: function (resultsMatched, contactDetails) {
         resultsMatched['_name'] = contactDetails.completeName
         resultsMatched['_email'] = contactDetails.email
-        debugger
         resultsRef.push(resultsMatched)
+      },
+      // Show end screen to the user
+      showEndScreen: function () {
+        this.showAssessment = false
       },
       // Get the full name from the input fields and concat them
       getContactDetails: function () {
@@ -209,3 +221,19 @@
     }
   }
 </script>
+
+<style scoped>
+#finish {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+#finish > a {
+  align-self: flex-end;
+  margin-top: 30px;
+}
+
+</style>
