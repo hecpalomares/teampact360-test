@@ -86,7 +86,7 @@
     </div>
     <div v-if="!showAssessment" id="finish">
       <h2 >Gracias {{ name }} {{ lastname }} tus resultados fueron enviados de manera exitosa.</h2>
-      <a href='https:www.teampact360.com'>Volver al sitio</a>
+      <a href='https://www.teampact360.com'>Volver al sitio</a>
     </div>
   </div>
 </template>
