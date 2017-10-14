@@ -79,9 +79,9 @@
         </div>
       </div>
       <hr>
-      <div style="display: flex; flex-direction: column; align-items: flex-end;">
+      <div class="error-message">
         <p class="small text-danger" v-if="!isValid">Es necesario completar los campos de nombre, apellido y correo electrónico para enviar los resultados.</p>
-        <button style="width:200px" v-on:click="calculateExam" v-bind:disabled="!isValid" class="btn btn-primary btn-lg">Enviar Resultados</button>
+        <button v-on:click="calculateExam" v-bind:disabled="!isValid" class="btn btn-primary btn-lg">Enviar Resultados</button>
       </div>
     </div>
     <div v-if="!showAssessment" id="finish">
@@ -234,6 +234,16 @@
 #finish > a {
   align-self: flex-end;
   margin-top: 30px;
+}
+
+.error-message {
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-end;
+}
+
+.error-message > button {
+  width: 200px;
 }
 
 </style>
